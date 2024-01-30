@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/component: central
+  name: central-debug
+  namespace: stackrox
+spec:
+  ports:
+    - name: https
+      port: 9090
+      protocol: TCP
+      targetPort: monitoring
+  selector:
+    app: central
+  sessionAffinity: None
+  type: ClusterIP

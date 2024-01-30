@@ -1,0 +1,6 @@
+defaultBaseImage: docker.io/library/ubuntu:20.04
+
+builds:
+  - id: app
+    dir: .
+    main: .
