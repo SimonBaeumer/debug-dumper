@@ -60,7 +60,7 @@ func main() {
 		MetricsClientset: metricsClientset,
 		Clientset:        clientset,
 		MemoryThreshold:  MemoryThreshold,
-		Interval:         5 * time.Minute,
+		Interval:         30 * time.Second,
 	}
 	go dumper.Watch(ctx)
 

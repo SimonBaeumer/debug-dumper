@@ -18,7 +18,7 @@ spec:
       automountServiceAccountToken: true
       containers:
         - name: my-app
-          image: quay.io/sbaumer/debug-monitor@sha256:f810ef2b209678cd23fd5aa924c65edb679efa9390a8826f44c5cc040ce44a31
+          image: quay.io/sbaumer/debug-monitor@sha256:d1e4fd1b7eb81007fa025ba110c5526927f43284b8e1611dec1e2d4fa6d00998
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding

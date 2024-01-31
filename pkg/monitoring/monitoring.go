@@ -52,7 +52,7 @@ func (d *Dumper) Watch(ctx context.Context) {
 				// TODO: Extend example with more capabilities to rate limit and configure debug dumps
 				val, ok := debugCache[cacheKey]
 				if ok {
-					if math.Abs(val.AsApproximateFloat64()/usage.AsApproximateFloat64()*100) < 10 {
+					if math.Abs(val.AsApproximateFloat64()/usage.AsApproximateFloat64()*100) < 50 {
 						fmt.Println("Skipping ", podMetrics.GetName(), " less than 10% memory difference")
 						continue
 					}
@@ -71,7 +71,7 @@ func (d *Dumper) Watch(ctx context.Context) {
 		}
 
 		select {
-		case <-time.Tick(1 * time.Second):
+		case <-time.Tick(d.Interval):
 			continue
 		case <-ctx.Done(): // exit loop
 			break
